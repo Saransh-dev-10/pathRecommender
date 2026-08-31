@@ -1,0 +1,147 @@
+/* ─── Google Fonts Import ─── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0a0a0a;
+    color: #f5f5f4;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgba(212, 229, 16, 0.3);
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  /* ── Editorial Surface Card ── */
+  .surface-card {
+    background: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1rem;
+  }
+
+  .surface-card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .surface-card-hover:hover {
+    border-color: rgba(212, 229, 16, 0.2);
+    background: #1a1a1a;
+  }
+
+  /* ── Accent Underline Highlight ── */
+  .accent-underline {
+    position: relative;
+    display: inline;
+  }
+
+  .accent-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background: #d4e510;
+    border-radius: 2px;
+  }
+
+  /* ── Serif Heading Utility ── */
+  .heading-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  /* ── Subtle Divider ── */
+  .divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    border: none;
+  }
+
+  /* ── Accent Button ── */
+  .btn-accent {
+    background: #d4e510;
+    color: #0a0a0a;
+    font-weight: 700;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+  }
+
+  .btn-accent:hover {
+    background: #e4f540;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(212, 229, 16, 0.2);
+  }
+
+  /* ── Ghost Button ── */
+  .btn-ghost {
+    background: transparent;
+    color: #f5f5f4;
+    font-weight: 600;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+  }
+
+  .btn-ghost:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  /* ── Muted Label ── */
+  .label-muted {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #78716c;
+  }
+
+  /* ── Page transition ── */
+  .page-enter {
+    animation: fadeIn 0.4s ease-out, slideUp 0.4s ease-out;
+  }
+
+  /* ── Timeline Connector ── */
+  .timeline-line {
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(212, 229, 16, 0.4), rgba(212, 229, 16, 0.05));
+  }
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2a2a;
+}
